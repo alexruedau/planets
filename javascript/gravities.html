@@ -9,14 +9,29 @@
 
   <script type="text/javascript">
     var user = prompt("How much do you weigh?");
+    var choose_planet = parseInt(prompt("Choose the planet. \n 1 is Mars, 2 is Jupiter"));
     var weight = parseInt(user); //your weight
     var earth = 9.8; //gravity on Earth
     var mars = 3.7; //gravity on Mars
     var jupiter = 24.8; //gravity on Jupiter
     var final_weight;
-    final_weight = weight * mars /earth; //final weight on Mars
-    final_weight = final_weight.toFixed(1); //using toFixed to use n decimals
-    document.write("Your weight on Mars is <strong>" + final_weight + " kilos</strong>.");
+    var planet;
+
+    if (choose_planet == 1) {
+      final_weight = weight * mars / earth; //final weight on Mars
+      final_weight = final_weight.toFixed(1); //using toFixed to use n decimals
+      planet = "Mars";
+    } else if (choose_planet == 2){
+      final_weight = weight * jupiter / earth;
+      final_weight = final_weight.toFixed(1);
+      planet = "Jupiter";
+    } else {
+      final_weight = 1000;
+      planet = "Pandora";
+    }
+
+
+    document.write("Your weight on " + planet + " is <strong>" + final_weight + " kilos</strong>.");
   </script>
 
 </body>
